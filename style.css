@@ -1,0 +1,194 @@
+/* --- 1. 全体設定 --- */
+body {
+	background-image: url("takaomiudsc.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+	background-color: #f0f2f5;
+	/* 画像が読み込まれるまでの背景色（薄いグレー） */
+	margin: 0;
+	padding: 100px 20px;
+	color: #333;
+	line-height: 1.6;
+	text-align: center;
+	font-family: sans-serif;
+}
+
+/* --- 2. メインの白いボックス（すりガラス仕様） --- */
+.content-box {
+	/* 背景色を白の60%くらいにして、後ろを透けさせます */
+	background-color: rgba(255, 255, 255, 0.6);
+
+	/* 🚀 ここがすりガラスの魔法：背景をぼかします */
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	/* iPhone/Safari用 */
+
+	/* 薄い白枠をつけると、ガラスの端っこっぽくなります */
+	border: 1px solid rgba(255, 255, 255, 0.4);
+
+	max-width: 600px;
+	margin: 20px auto;
+	padding: 40px;
+	display: block;
+	border-radius: 20px;
+	/* 角を少しだけさらに丸く */
+
+	/* 影も少し広がるように調整 */
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+/* --- 3. タイトル (h1) --- */
+h1 {
+	font-family: 'Sixtyfour Convergence', sans-serif;
+	font-size: 3rem;
+	font-weight: 800;
+	letter-spacing: 0.1em;
+	display: inline-block;
+	margin: 40px 0;
+
+	/* グラデーション文字の設定 */
+	background: linear-gradient(45deg, #4285F4, #34A853);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+
+	filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
+	transition: 0.3s;
+
+	/* 🚀 【追加】ふわふわアニメーション */
+	animation: float 3s ease-in-out infinite;
+}
+
+/* ふわふわ動く魔法の定義 */
+@keyframes float {
+	0% {
+		transform: translateY(0px);
+	}
+
+	50% {
+		transform: translateY(-10px);
+	}
+
+	/* 10px分ふんわり浮く */
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+/* タイトルのホバー演出 */
+h1:hover {
+	filter: drop-shadow(2px 8px 15px rgba(0, 0, 0, 0.3));
+	cursor: pointer;
+	/* アニメーションと喧嘩しないように、ホバー時は少し拡大する演出に */
+	transform: scale(1.05);
+}
+
+/* --- 4. リンクのデザイン --- */
+
+/* Googleリンク */
+.google-link {
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.google-link:hover {
+	opacity: 0.7;
+}
+
+/* Googleカラーの文字 */
+.g1,
+.g2 {
+	color: #4285F4;
+}
+
+.o1,
+.e {
+	color: #EA4335;
+}
+
+.o2 {
+	color: #FBBC05;
+}
+
+.l {
+	color: #34A853;
+}
+/* Googleリンクをボタン化 */
+.google-link {
+	display: inline-block;
+	background-color: white;
+	/* 白背景でロゴ色を映えさせる */
+	padding: 12px 24px;
+	border-radius: 50px;
+	text-decoration: none;
+	border: 2px solid #f2f2f2;
+	/* 薄いグレーの枠線 */
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+	transition: 0.3s;
+	margin-bottom: 15px;
+	/* ボタン同士の隙間 */
+}
+
+/* ウェザーニュースリンク */
+.weather-link {
+	color: #ff8c00;
+	text-decoration: none;
+	font-weight: bold;
+	transition: 0.3s;
+}
+
+.weather-link {
+	display: inline-block;
+	/* 背景は白っぽくして文字色を目立たせる */
+	background-color: rgba(255, 255, 255, 0.9);
+	color: #6D8DC2 !important;
+	/* ご希望の色 */
+	font-weight: 900;
+	/* しっかり太めに */
+
+	padding: 12px 24px;
+	border-radius: 50px;
+	text-decoration: none;
+
+	/* 枠線を文字色と同じにするとプロっぽい */
+	border: 2px solid #6D8DC2;
+
+	box-shadow: 0 4px 10px rgba(109, 141, 194, 0.2);
+	transition: 0.3s;
+	margin-top: 10px;
+}
+
+.weather-link:hover {
+	/* ホバー時は色を反転させると「押せる感」がアップします */
+	background-color: #6D8DC2;
+	color: white !important;
+	transform: translateY(-3px);
+	box-shadow: 0 6px 15px rgba(109, 141, 194, 0.4);
+}
+
+/* --- 5. 文章（余白とサイズをプロ仕様に） --- */
+p {
+	color: #444;
+	margin: 30px 0;
+	/* 🚀 上下の隙間を広げて、ボタンとの間におしゃれな「間」を作る */
+	font-size: 1.1rem;
+	/* 🚀 文字をほんの少し大きくして、読みやすさをアップ */
+	font-weight: 500;
+	/* 🚀 少しだけしっかりした太さに（400が標準、500は中太） */
+}
+
+/* --- 6. フッター --- */
+footer {
+	width: 100%;
+	margin-top: 50px;
+	padding: 40px 0;
+}
+
+footer p {
+	color: #1a2a6c;
+	font-weight: bold;
+	font-size: 1.1rem;
+	letter-spacing: 0.2em;
+	text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8),
+		-1px -1px 2px rgba(255, 255, 255, 0.8);
+}
